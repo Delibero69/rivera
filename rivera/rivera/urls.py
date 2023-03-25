@@ -27,6 +27,12 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name='index'),
-    # path('main',products,name='main'),
-    # path('products/',include("products.urls",namespace='products')),
+    # path('contact/',include("main.urls",namespace='contact')),
+    path('contact',contact,name='contact'),
+    path('photo',photo,name='photo'),
+    path('video',video,name='video'),
+    path('docs',docs,name='docs'),
+    path('about',about,name='about'),
+    path('apartmentsearch',apartmentsearch,name='apartmentsearch'),
+    path('genplan',apartmentsearch,name='genplan'),
 ]

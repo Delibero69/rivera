@@ -1,0 +1,68 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ title }}</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="{%  url 'about' %}">Описание</a></li>
+    <li><a href="{%  url 'docs' %}">Документы</a></li>
+    <li class="divider"></li>
+    <!-- <li><a href="#!">three</a></li> -->
+</ul>
+
+<ul id="dropdown2" class="dropdown-content">
+    <li><a href="{%  url 'genplan' %}">Квартиры по генплану</a></li>
+    <li><a href="{%  url 'apartmentsearch' %}">Квартиры по параметрам</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Акционные квартиры</a></li>
+</ul>
+
+<ul id="dropdown3" class="dropdown-content">
+    <li><a href="{%  url 'photo' %}">Фото</a></li>
+    <li><a href="{%  url 'video' %}">Видео</a></li>
+    <li class="divider"></li>
+    <!-- <li><a href="#!">three</a></li> -->
+</ul>
+
+<!-- https://riviera-gardens.com.ua/img/newImg/logo_big.png -->
+
+<nav class="black">
+    <a href="{%  url 'index' %}" class="brand-logo green-text"><i class="material-icons">nature_people</i>Сады Ривьеры</a>
+    <div class="nav-wrapper container">
+        <ul class="right hide-on-med-and-down" id="navbar1">
+            <li><a class="dropdown-trigger" href="./index.html" data-target="dropdown1">О жилом районе<i
+                    class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-trigger" href="./index.html" data-target="dropdown2">Выбрать недвижимость<i
+                    class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-trigger" href="./index.html" data-target="dropdown3">Галерея<i
+                    class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a href="{%  url 'contact' %}">Контакты</a></li>
+
+            <a class="waves-effect waves-light btn green"><i class="material-icons left ">call</i>Заказать звонок</a>
+        </ul>
+    </div>
+</nav>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="https://riviera-gardens.com.ua/upload/about/SR1(2).jpg"></div>
+</div>
+    {% block content %} {% endblock %}
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{% static 'main/js/script.js'%}"></script>
+</body>
+</html>
